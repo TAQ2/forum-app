@@ -4,8 +4,7 @@ import {
   REQUEST_POSTS,
   RECEIVE_POSTS,
   REQUEST_COMMENTS,
-  RECEIVE_COMMENTS,
-  REMOVE_COMMENTS
+  RECEIVE_COMMENTS
 } from "../actions";
 
 const posts = (
@@ -35,43 +34,12 @@ const posts = (
   }
 };
 
-// const comments = (
-//   state = {
-//     fetchingComments: true,
-//     items: {},
-//     postIdsShowingComments: []
-//   },
-//   action
-// ) => {
-//   switch (action.type) {
-//     case REQUEST_COMMENTS:
-//       return {
-//         ...state,
-//         fetchingComments: true
-//       };
-//     case RECEIVE_COMMENTS:
-//       return {
-//         ...state,
-//         fetchingComments: false,
-//         items: { ...state.comments, ...action.comments }
-//       };
-//     // case REMOVE_COMMENTS:
-//     //   return {
-//     //     ...state,
-//     //     fetchingComments: false,
-//     //     items: action.comments,
-//     //     postId: action.id
-//     //   };
-//     default:
-//       return state;
-//   }
-// };
-
-const intialState = {
-  items: {}
-};
-
-const comments = (state = intialState, action) => {
+const comments = (
+  state = {
+    items: {}
+  },
+  action
+) => {
   switch (action.type) {
     case REQUEST_COMMENTS:
       return {
@@ -82,7 +50,6 @@ const comments = (state = intialState, action) => {
         }
       };
     case RECEIVE_COMMENTS:
-      console.log(action.postId);
       return {
         ...state,
         items: { ...state.items, [action.postId]: action.items }

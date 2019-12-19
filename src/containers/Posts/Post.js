@@ -1,9 +1,16 @@
 import React, { Component } from "react";
-import { connect } from "react-redux";
+import PropTypes from "prop-types";
 
 import Comments from "../Comments";
 
 class Post extends Component {
+  static propTypes = {
+    id: PropTypes.number.isRequired,
+    title: PropTypes.string.isRequired,
+    body: PropTypes.string.isRequired,
+    index: PropTypes.number.isRequired
+  };
+
   state = {
     isShowingComments: false
   };
@@ -16,28 +23,37 @@ class Post extends Component {
     return (
       <div style={{ marginBottom: 20, marginTop: 20 }}>
         {index !== 0 && <hr />}
-        <div
-          style={{
-            display: "flex",
-            alignItems: "baseline",
-            justifyContent: "space-between"
-          }}
-        >
+        <div style={{ fontSize: "1.2em" }}>
           <div
-            style={{ marginBottom: 10, fontSize: "1.2em", fontWeight: "bold" }}
+            style={{
+              display: "flex",
+              alignItems: "baseline",
+              justifyContent: "space-between"
+            }}
           >
-            {title}
+            <div
+              style={{
+                marginBottom: 10,
+                fontSize: "1.2em",
+                fontWeight: "bold"
+              }}
+            >
+              {title}
+            </div>
           </div>
+          <div>{body}</div>
         </div>
-        <div>{body}</div>
         <button
           onClick={() => {
             this.setState({ isShowingComments: !isShowingComments });
           }}
+          style={{ margin: "10px 0px" }}
         >
           {isShowingComments ? "Hide" : "Comments"}
         </button>
-        {isShowingComments && <Comments postId={id} />}
+        <div style={{ marginLeft: "5%", width: "90%" }}>
+          {isShowingComments && <Comments postId={id} />}
+        </div>
       </div>
     );
   }

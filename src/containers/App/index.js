@@ -6,31 +6,12 @@ import { retrievePosts } from "../../actions";
 import Posts from "../Posts";
 
 class App extends React.Component {
-  // static propTypes = {
-  //   fetchingPosts: PropTypes.bool.isRequired,
-  //   posts: PropTypes.array.isRequired,
-  //
-  //   dispatch: PropTypes.func.isRequired
-  // };
-  //
-  //
+  // TODO - add styles to css file
+  static propTypes = {
+    dispatch: PropTypes.func.isRequired
+  };
 
   render() {
-    // const { fetchingPosts, posts, error } = this.props;
-    //
-    // if (error) {
-    //   return (
-    //     <div>
-    //       Sorry there was an error! Please don't <strong>ever</strong> click a
-    //       button that says 'Break me'!
-    //     </div>
-    //   );
-    // }
-    //
-    // if (fetchingPosts || posts.length === 0) {
-    //   return <h3>Loading Posts!</h3>;
-    // }
-
     // TODO - add styles to css file
     return (
       <>
@@ -52,14 +33,11 @@ class App extends React.Component {
   }
 }
 
-// const mapStateToProps = state => {
-//   const { fetching, items, error } = state.posts;
-//
-//   return {
-//     fetchingPosts: fetching,
-//     posts: items,
-//     error
-//   };
-// };
-
 export default connect()(App);
+
+// make comment component
+// how to do the styling
+// error boundaries and error handling
+// bonus question
+// seperate out actions into seperate files
+// add tests?

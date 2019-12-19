@@ -1,13 +1,20 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 import { connect } from "react-redux";
 
 import Post from "./Post";
 import { retrievePosts } from "../../actions";
 
 class Posts extends Component {
+  static propTypes = {
+    dispatch: PropTypes.func.isRequired,
+    posts: PropTypes.array.isRequired,
+    fetchingPosts: PropTypes.bool.isRequired,
+    error: PropTypes.bool
+  };
+
   componentDidMount() {
     const { dispatch } = this.props;
-
     dispatch(retrievePosts());
   }
 

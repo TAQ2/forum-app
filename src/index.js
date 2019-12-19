@@ -8,9 +8,6 @@ import { Provider } from "react-redux";
 import thunk from "redux-thunk";
 import reducers from "./reducers";
 
-// what is thunk doing
-// make the redux store work
-// check the chrome tool for whether we are ever setting the isloading flag in the comment object
 const store = createStore(
   reducers,
   compose(

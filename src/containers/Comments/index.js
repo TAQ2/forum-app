@@ -1,9 +1,17 @@
 import React from "react";
 import { connect } from "react-redux";
+import PropTypes from "prop-types";
 
+import Comment from "./Comment";
 import { retrieveComments } from "../../actions";
 
 class Comments extends React.Component {
+  static propTypes = {
+    dispatch: PropTypes.func.isRequired,
+    postId: PropTypes.number.isRequired,
+    comments: PropTypes.object.isRequired
+  };
+
   state = {
     isLoading: true
   };
@@ -24,7 +32,7 @@ class Comments extends React.Component {
       return <div>Fetching comments</div>;
     }
     return comments[postId].map((comment, i) => (
-      <div key={i}>{comment.name}</div>
+      <Comment {...comment} key={i} />
     ));
   }
 }

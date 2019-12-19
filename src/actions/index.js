@@ -1,11 +1,8 @@
 export const REQUEST_POSTS = "REQUEST_POSTS";
 export const RECEIVE_POSTS = "RECEIVE_POSTS";
+
 export const REQUEST_COMMENTS = "REQUEST_COMMENTS";
 export const RECEIVE_COMMENTS = "RECEIVE_COMMENTS";
-export const REMOVE_COMMENTS = "REMOVE_COMMENTS";
-
-export const HIDE_COMMENTS = "HIDE_COMMENTS";
-export const SHOW_COMMENTS = "SHOW_COMMENTS";
 
 export const requestPosts = () => ({
   type: REQUEST_POSTS
