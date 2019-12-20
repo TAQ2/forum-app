@@ -1,4 +1,8 @@
-import { REQUEST_COMMENTS, RECEIVE_COMMENTS } from "../actions/comments";
+import {
+  REQUEST_COMMENTS,
+  RECEIVE_COMMENTS,
+  ADD_COMMENT
+} from "../actions/comments";
 
 const comments = (
   state = {
@@ -19,6 +23,13 @@ const comments = (
       return {
         ...state,
         items: { ...state.items, [action.postId]: action.items }
+      };
+    case ADD_COMMENT:
+      const newComment = { ...action.formData, postId: action.postId };
+      const newComments = [...state.items[action.postId], newComment];
+      return {
+        ...state,
+        items: { ...state.items, [action.postId]: newComments }
       };
     default:
       return state;

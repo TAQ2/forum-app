@@ -37,4 +37,3 @@ export default connect()(App);
 // bonus question
 // add tests?
 // Design
-// dependabot

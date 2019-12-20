@@ -21,7 +21,6 @@ const posts = (
         items: action.posts,
         error: action.error
       };
-
     default:
       return state;
   }

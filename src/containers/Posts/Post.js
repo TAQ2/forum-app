@@ -51,9 +51,11 @@ class Post extends Component {
         >
           {isShowingComments ? "Hide" : "Comments"}
         </button>
-        <div style={{ marginLeft: "5%", width: "90%" }}>
-          {isShowingComments && <Comments postId={id} />}
-        </div>
+        {isShowingComments && (
+          <div style={{ marginLeft: "5%", width: "90%" }}>
+            <Comments postId={id} />
+          </div>
+        )}
       </div>
     );
   }

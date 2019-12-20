@@ -1,5 +1,6 @@
 export const REQUEST_COMMENTS = "REQUEST_COMMENTS";
 export const RECEIVE_COMMENTS = "RECEIVE_COMMENTS";
+export const ADD_COMMENT = "ADD_COMMENT";
 
 export const requestComments = postId => ({
   type: REQUEST_COMMENTS,
@@ -26,3 +27,9 @@ export const retrieveComments = postId => async dispatch => {
 
   dispatch(receiveComments(postId, comments.slice(0, 5)));
 };
+
+export const addComment = (postId, formData) => ({
+  type: ADD_COMMENT,
+  postId,
+  formData
+});
