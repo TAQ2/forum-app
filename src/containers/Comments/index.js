@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import PropTypes from "prop-types";
 
 import Comment from "./Comment";
+import AddComment from "./AddComment";
 import { retrieveComments } from "../../actions/comments";
 
 class Comments extends React.Component {
@@ -31,9 +32,15 @@ class Comments extends React.Component {
     if (comments[postId] == null || comments[postId].fetchingComments) {
       return <div>Fetching comments</div>;
     }
-    return comments[postId].map((comment, i) => (
-      <Comment {...comment} key={i} />
-    ));
+    return (
+      <>
+        {comments[postId].map((comment, i) => (
+          <Comment {...comment} key={i} />
+        ))}
+        <br />
+        <AddComment postId={postId} />
+      </>
+    );
   }
 }
 

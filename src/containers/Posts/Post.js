@@ -47,7 +47,7 @@ class Post extends Component {
           onClick={() => {
             this.setState({ isShowingComments: !isShowingComments });
           }}
-          style={{ margin: "10px 0px" }}
+          style={{ marginTop: 10 }}
         >
           {isShowingComments ? "Hide" : "Comments"}
         </button>
