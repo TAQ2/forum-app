@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 
 import Post from "./Post";
-import { retrievePosts } from "../../actions";
+import { retrievePosts } from "../../actions/posts";
 
 class Posts extends Component {
   static propTypes = {

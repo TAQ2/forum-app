@@ -12,7 +12,6 @@ class App extends React.Component {
   };
 
   render() {
-    // TODO - add styles to css file
     return (
       <>
         <div style={{ backgroundColor: "red", textAlign: "center" }}>
@@ -35,9 +34,9 @@ class App extends React.Component {
 
 export default connect()(App);
 
-// make comment component
 // how to do the styling
 // error boundaries and error handling
 // bonus question
 // seperate out actions into seperate files
 // add tests?
+// Design

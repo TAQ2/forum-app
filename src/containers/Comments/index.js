@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import PropTypes from "prop-types";
 
 import Comment from "./Comment";
-import { retrieveComments } from "../../actions";
+import { retrieveComments } from "../../actions/comments";
 
 class Comments extends React.Component {
   static propTypes = {
