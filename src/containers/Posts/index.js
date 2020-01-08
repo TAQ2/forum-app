@@ -22,13 +22,7 @@ class Posts extends Component {
     const { posts, fetchingPosts, error } = this.props;
 
     if (error) {
-      // TODO should we use error boundaries?
-      return (
-        <div>
-          Sorry there was an error! Please don't <strong>ever</strong> click a
-          button that says 'Break me'!
-        </div>
-      );
+      return <div>Sorry there was an error! Please try again</div>;
     }
 
     if (fetchingPosts) {

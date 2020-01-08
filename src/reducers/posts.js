@@ -4,7 +4,7 @@ const posts = (
   state = {
     fetchingPosts: true,
     items: [],
-    error: null
+    error: false
   },
   action
 ) => {

@@ -7,25 +7,29 @@ export const requestComments = postId => ({
   postId
 });
 
-export const receiveComments = (postId, items) => ({
+export const receiveComments = (postId, items, error) => ({
   type: RECEIVE_COMMENTS,
   items,
-  postId
+  postId,
+  error
 });
 
 export const retrieveComments = postId => async dispatch => {
   dispatch(requestComments(postId));
 
-  let comments;
+  let comments, error;
   try {
-    comments = await (await fetch(
-      "https://jsonplaceholder.typicode.com/comments?postId=" + postId
-    )).json();
+    comments = await (
+      await fetch(
+        "https://jsonplaceholder.typicode.com/comments?postId=" + postId
+      )
+    ).json();
   } catch (e) {
-    comments = []; // TODO - error handling
+    error = true;
+    comments = [];
   }
 
-  dispatch(receiveComments(postId, comments.slice(0, 5)));
+  dispatch(receiveComments(postId, comments.slice(0, 5), error));
 };
 
 export const addComment = (postId, formData) => ({

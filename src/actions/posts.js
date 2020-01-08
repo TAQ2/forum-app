@@ -11,17 +11,17 @@ export const receivePosts = ({ posts, error }) => ({
   error
 });
 
-export const retrievePosts = (
-  URL = "https://jsonplaceholder.typicode.com/posts"
-) => async dispatch => {
+export const retrievePosts = () => async dispatch => {
   dispatch(requestPosts());
 
   let posts, error;
   try {
-    posts = await (await fetch(URL)).json();
+    posts = await (
+      await fetch("https://jsonplaceholder.typicode.com/posts")
+    ).json();
   } catch (e) {
     posts = [];
-    error = e;
+    error = true;
   }
 
   dispatch(receivePosts({ posts, error }));

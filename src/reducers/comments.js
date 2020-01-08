@@ -6,7 +6,8 @@ import {
 
 const comments = (
   state = {
-    items: {}
+    items: {},
+    error: false
   },
   action
 ) => {
@@ -22,6 +23,7 @@ const comments = (
     case RECEIVE_COMMENTS:
       return {
         ...state,
+        error: action.error,
         items: { ...state.items, [action.postId]: action.items }
       };
     case ADD_COMMENT:

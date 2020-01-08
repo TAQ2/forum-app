@@ -10,7 +10,8 @@ class Comments extends React.Component {
   static propTypes = {
     dispatch: PropTypes.func.isRequired,
     postId: PropTypes.number.isRequired,
-    comments: PropTypes.object.isRequired
+    comments: PropTypes.object.isRequired,
+    error: PropTypes.bool
   };
 
   state = {
@@ -27,7 +28,11 @@ class Comments extends React.Component {
   }
 
   render() {
-    const { comments, postId } = this.props;
+    const { comments, postId, error } = this.props;
+
+    if (error) {
+      return <div>Sorry there was an error! Please try again</div>;
+    }
 
     if (comments[postId] == null || comments[postId].fetchingComments) {
       return <div>Fetching comments</div>;
@@ -45,8 +50,8 @@ class Comments extends React.Component {
 }
 
 const mapStateToProps = state => {
-  const { items } = state.comments;
-  return { comments: items };
+  const { items, error } = state.comments;
+  return { comments: items, error };
 };
 
 export default connect(mapStateToProps)(Comments);
