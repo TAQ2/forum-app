@@ -1,4 +1,3 @@
-make header into a seperate component
 add tests
 Design
-Toaster explaining the point of the repo?
+Toaster explaining the point of the repo?Ì
