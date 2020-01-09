@@ -15,3 +15,8 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+@font-face {
+  font-family: "Chomsky";
+  src: local("Chomsky"), url(./fonts/Chomsky.otf) format("truetype");
+}
