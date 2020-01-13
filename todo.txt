@@ -1,7 +1,6 @@
+restructure comments into a better way so that we don't use Proptypes.any and also loading flag things to make a graphql type structure
+move resize recording into seperate file - as redux middleware?
 use theme file
-doensn't make sense to have the comments organised by id, rather graphql it
-add tests
-Design
 Toaster explaining the point of the repo?Ì
 proptypes
 loading messages

@@ -1,9 +1,21 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
+import styled from "styled-components";
 
 import Post from "./Post";
+import { screenBreakpoints } from "../../theme";
 import { retrievePosts } from "../../actions/posts";
+
+const Container = styled.div`
+  @media (max-width: ${screenBreakpoints.tablet}px) {
+    width: 98%;
+  }
+
+  width: 80%;
+  margin: 0 auto;
+  max-width: 1050px;
+`;
 
 class Posts extends Component {
   static propTypes = {
@@ -29,15 +41,19 @@ class Posts extends Component {
       return <h3>Loading Posts!</h3>;
     }
 
-    return posts.map((post, i) => (
-      <Post
-        key={post.id}
-        id={post.id}
-        title={post.title}
-        body={post.body}
-        index={i}
-      />
-    ));
+    return (
+      <Container>
+        {posts.map((post, i) => (
+          <Post
+            key={post.id}
+            id={post.id}
+            title={post.title}
+            body={post.body}
+            index={i}
+          />
+        ))}
+      </Container>
+    );
   }
 }
 

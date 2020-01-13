@@ -1,11 +1,13 @@
 import React from "react";
-import { Spring } from "react-spring/renderprops";
+// import { Spring } from "react-spring/renderprops";
+import { useSpring, animated } from "react-spring";
 import styled from "styled-components";
 import { connect } from "react-redux";
 
 import { screenBreakpoints } from "../../theme";
+import { PropTypes } from "prop-types";
 
-const Container = styled.header`
+const Container = styled(animated.header)`
   @media (max-width: ${screenBreakpoints.tablet}px) {
     justify-content: space-around;
   }
@@ -21,44 +23,40 @@ const Container = styled.header`
   line-height: 1.3em;
 `;
 
-class Header extends React.Component {
-  render() {
-    const { hasScrolled, screenWidth } = this.props;
-    const isSmallScreen = screenWidth <= screenBreakpoints.small;
+function Header({ hasScrolled, screenWidth }) {
+  const animation = useSpring({
+    fontSize:
+      screenWidth <= screenBreakpoints.small
+        ? "2em"
+        : hasScrolled
+        ? "2.5em"
+        : "3em",
+    background: hasScrolled
+      ? "linear-gradient(white 90%, lightblue 10%)"
+      : "linear-gradient(lightblue 0%, lightblue 100%)"
+  });
 
-    return (
-      <Spring
-        from={{
-          fontSize: isSmallScreen ? "2em" : "3em",
-          background: "linear-gradient(lightblue 0%, lightblue 100%)"
-        }}
-        to={{
-          // @Incomplete - is there an easier way to assum the from config rather than copying it
-          fontSize: isSmallScreen ? "2em" : hasScrolled ? "2.5em" : "3em",
-          background: hasScrolled
-            ? "linear-gradient(white 90%, lightblue 10%)"
-            : "linear-gradient(lightblue 0%, lightblue 100%)"
-        }}
-      >
-        {props => (
-          <Container style={props}>
-            <span>Fake Latin News</span>
-            {screenWidth > screenBreakpoints.tablet && (
-              <span
-                style={{
-                  fontSize: "0.5em",
-                  color: "#666"
-                }}
-              >
-                Lorem ipsum dolor sit amet
-              </span>
-            )}
-          </Container>
-        )}
-      </Spring>
-    );
-  }
+  return (
+    <Container style={animation}>
+      <span>Fake Latin News</span>
+      {screenWidth > screenBreakpoints.tablet && (
+        <span
+          style={{
+            fontSize: "0.5em",
+            color: "#666"
+          }}
+        >
+          Lorem ipsum dolor sit amet
+        </span>
+      )}
+    </Container>
+  );
 }
+
+Header.propTypes = {
+  hasScrolled: PropTypes.bool.isRequired,
+  screenWidth: PropTypes.number.isRequired
+};
 
 export default connect(state => ({
   hasScrolled: state.userMetrics.scrollY > 0,

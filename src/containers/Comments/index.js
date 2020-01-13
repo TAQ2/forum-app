@@ -22,7 +22,10 @@ class Comments extends React.Component {
   static propTypes = {
     dispatch: PropTypes.func.isRequired,
     postId: PropTypes.number.isRequired,
-    comments: PropTypes.object.isRequired,
+    // @Question - it doesn't matter if we set fetchingComments flag so do we
+    // need it? Does it just improve readability, perhaps the store should be
+    // restructued so that comments are in the post object
+    comments: PropTypes.any,
     error: PropTypes.bool
   };
 
@@ -32,9 +35,7 @@ class Comments extends React.Component {
 
   componentDidMount() {
     const { dispatch, postId, comments } = this.props;
-    // @Question - it doesn't matter if we set fetchingComments flag so do we
-    // need it? Does it just improve readability
-    if (comments[postId] == null || comments[postId].fetchingComments) {
+    if (comments == null || comments.fetchingComments) {
       dispatch(retrieveComments(postId));
     }
   }
@@ -46,13 +47,13 @@ class Comments extends React.Component {
       return <div>Sorry there was an error! Please try again</div>;
     }
 
-    if (comments[postId] == null || comments[postId].fetchingComments) {
+    if (comments == null || comments.fetchingComments) {
       return <div>Fetching comments</div>;
     }
     return (
       <>
         <Container>
-          {comments[postId].map((comment, i) => (
+          {comments.map((comment, i) => (
             <Comment {...comment} key={i} />
           ))}
         </Container>
@@ -65,7 +66,7 @@ class Comments extends React.Component {
 const mapStateToProps = (state, props) => {
   const { items, error } = state.comments;
   // @Cleanup - only pass comments that are related to the components
-  return { comments: items, error };
+  return { comments: items[props.postId], error };
 };
 
 export default connect(mapStateToProps)(Comments);

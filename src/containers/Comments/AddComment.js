@@ -3,12 +3,17 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import styled from "styled-components";
 
-import { addComment } from "../../actions/comments";
 import Card from "../components/Card";
 import Button from "../components/Button";
+import { addComment } from "../../actions/comments";
 import { screenBreakpoints } from "../../theme";
 
 const Input = styled.input`
+  @media (max-width: ${screenBreakpoints.tablet}px) {
+    width: 100%;
+  }
+
+  width: 35%
   border: none;
   background-color: #efefef;
   border-radius: 3px;
@@ -25,7 +30,7 @@ class AddComment extends React.Component {
   };
 
   state = {
-    name: "", // @Cleanup - name and title
+    title: "",
     email: "",
     body: "",
     isDisplayingForm: false
@@ -37,22 +42,22 @@ class AddComment extends React.Component {
 
   handleSubmit = () => {
     const { dispatch, postId } = this.props;
-    const { name, email, body } = this.state;
+    const { title, email, body } = this.state;
 
-    if (name === "" || email === "" || body === "") {
+    if (title === "" || email === "" || body === "") {
       return;
     }
 
-    dispatch(addComment(postId, { name, email, body }));
+    dispatch(addComment(postId, { name: title, email, body }));
     this.setState({
-      name: "",
+      title: "",
       email: "",
       body: ""
     });
   };
 
   render() {
-    const { name, email, body, isDisplayingForm } = this.state;
+    const { title, email, body, isDisplayingForm } = this.state;
     const { screenWidth } = this.props;
 
     if (!isDisplayingForm) {
@@ -60,9 +65,7 @@ class AddComment extends React.Component {
         <Card>
           <div style={{ display: "flex" }}>
             <Button
-              style={{
-                marginBottom: 10
-              }}
+              style={{ marginBottom: 10 }}
               onClick={() => {
                 this.setState({ isDisplayingForm: true });
               }}
@@ -74,41 +77,40 @@ class AddComment extends React.Component {
       );
     }
 
+    const submitIsDisabled = title === "" || email === "" || body === "";
+    const isSmallScreen = screenWidth < screenBreakpoints.small;
+
     return (
       <Card>
         <div
           style={{
             display: "flex",
             marginBottom: 10,
-            flexDirection: screenWidth < screenBreakpoints.small && "column"
+            flexDirection: isSmallScreen && "column"
           }}
         >
           <Input
             style={{
               marginRight: 20,
-              width: screenWidth < screenBreakpoints.small ? "100%" : "35%",
-              marginBottom: screenWidth < screenBreakpoints.small && 10
+              marginBottom: isSmallScreen && 10
             }}
-            value={name}
+            value={title}
             onChange={this.handleInputChange}
-            name="name"
+            name="title"
             placeholder="Title..."
           />
           <Input
-            style={{
-              width: screenWidth < screenBreakpoints.small ? "100%" : "35%"
-            }}
             value={email}
             onChange={this.handleInputChange}
             name="email"
             placeholder="Email..."
           />
-          {screenWidth >= screenBreakpoints.small && (
+          {!isSmallScreen && (
             <Button
               style={{
                 marginLeft: "auto"
               }}
-              isDisabled={name === "" || email === "" || body === ""}
+              isDisabled={submitIsDisabled}
               onClick={this.handleSubmit}
             >
               Submit
@@ -131,16 +133,13 @@ class AddComment extends React.Component {
           onChange={this.handleInputChange}
           placeholder="Add a comment..."
         />
-        {screenWidth < screenBreakpoints.small && (
+        {isSmallScreen && (
           <div
             style={{
               display: "flex"
             }}
           >
-            <Button
-              isDisabled={name === "" || email === "" || body === ""}
-              onClick={this.handleSubmit}
-            >
+            <Button isDisabled={submitIsDisabled} onClick={this.handleSubmit}>
               Submit
             </Button>
           </div>

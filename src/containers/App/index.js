@@ -1,23 +1,9 @@
 import React from "react";
-import styled from "styled-components";
-import { screenBreakpoints } from "../../theme";
 import { connect } from "react-redux";
 
 import Header from "../Header";
 import Posts from "../Posts";
 import { updateScrollY, updateScreenWidth } from "../../actions/userMetrics";
-
-// @Cleanup - this should be in posts
-const Container = styled.div`
-  @media (max-width: ${screenBreakpoints.tablet}px) {
-    width: 98%;
-    margin: 0px 1%;
-  }
-
-  width: 80%;
-  margin: 0 auto;
-  max-width: 1050px;
-`;
 
 class App extends React.Component {
   // @Cleanup - move user metrics logic into a new file
@@ -49,9 +35,7 @@ class App extends React.Component {
     return (
       <>
         <Header />
-        <Container>
-          <Posts />
-        </Container>
+        <Posts />
       </>
     );
   }
