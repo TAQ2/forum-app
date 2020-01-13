@@ -1,10 +1,12 @@
 import React from "react";
 import { Spring } from "react-spring/renderprops";
 import styled from "styled-components";
-import { screenWidth } from "../../theme";
+import { connect } from "react-redux";
+
+import { screenBreakpoints } from "../../theme";
 
 const Container = styled.header`
-  @media (max-width: ${screenWidth.tablet}px) {
+  @media (max-width: ${screenBreakpoints.tablet}px) {
     justify-content: space-around;
   }
 
@@ -20,32 +22,9 @@ const Container = styled.header`
 `;
 
 class Header extends React.Component {
-  state = { hasScrolled: false, screenSize: window.innerWidth };
-
-  updateScrolled = () => {
-    const winScroll =
-      document.body.scrollTop || document.documentElement.scrollTop;
-
-    this.setState({ hasScrolled: winScroll > 0 });
-  };
-
-  updateScreenSize = () => {
-    this.setState({ screenSize: window.innerWidth });
-  };
-
-  componentDidMount() {
-    window.addEventListener("scroll", this.updateScrolled);
-    window.addEventListener("resize", this.updateScreenSize);
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener("scroll", this.updateScrolled);
-    window.removeEventListener("resize", this.updateScreenSize);
-  }
-
   render() {
-    const { hasScrolled, screenSize } = this.state;
-    const isSmallScreen = screenSize <= screenWidth.small;
+    const { hasScrolled, screenWidth } = this.props;
+    const isSmallScreen = screenWidth <= screenBreakpoints.small;
 
     return (
       <Spring
@@ -64,7 +43,7 @@ class Header extends React.Component {
         {props => (
           <Container style={props}>
             <span>Fake Latin News</span>
-            {screenSize > screenWidth.tablet && (
+            {screenWidth > screenBreakpoints.tablet && (
               <span
                 style={{
                   fontSize: "0.5em",
@@ -81,4 +60,7 @@ class Header extends React.Component {
   }
 }
 
-export default Header;
+export default connect(state => ({
+  hasScrolled: state.userMetrics.scrollY > 0,
+  screenWidth: state.userMetrics.screenWidth
+}))(Header);

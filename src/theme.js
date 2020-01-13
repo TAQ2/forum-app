@@ -1,4 +1,4 @@
-export const screenWidth = {
+export const screenBreakpoints = {
   small: 576,
   tablet: 750
 };

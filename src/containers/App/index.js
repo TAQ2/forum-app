@@ -1,28 +1,60 @@
 import React from "react";
 import styled from "styled-components";
-import { screenWidth } from "../../theme";
+import { screenBreakpoints } from "../../theme";
+import { connect } from "react-redux";
 
 import Header from "../Header";
 import Posts from "../Posts";
+import { updateScrollY, updateScreenWidth } from "../../actions/userMetrics";
 
+// @Cleanup - this should be in posts
 const Container = styled.div`
-  @media (max-width: ${screenWidth.tablet}px) {
+  @media (max-width: ${screenBreakpoints.tablet}px) {
     width: 98%;
     margin: 0px 1%;
   }
+
   width: 80%;
-  margin: 0px 10%;
+  margin: 0 auto;
+  max-width: 1050px;
 `;
 
-function App() {
-  return (
-    <>
-      <Header />
-      <Container>
-        <Posts />
-      </Container>
-    </>
-  );
+class App extends React.Component {
+  // @Cleanup - move user metrics logic into a new file
+  updateScroll = () => {
+    const winScrollY =
+      document.body.scrollTop || document.documentElement.scrollTop;
+
+    this.props.dispatch(updateScrollY(winScrollY));
+  };
+
+  updateScreen = () => {
+    // @Incomplete - we should throttle this update
+    this.props.dispatch(updateScreenWidth(window.innerWidth));
+  };
+
+  componentDidMount() {
+    window.addEventListener("scroll", this.updateScroll);
+    window.addEventListener("resize", this.updateScreen);
+    this.updateScroll();
+    this.updateScreen();
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("scroll", this.updateScroll);
+    window.removeEventListener("resize", this.updateScreen);
+  }
+
+  render() {
+    return (
+      <>
+        <Header />
+        <Container>
+          <Posts />
+        </Container>
+      </>
+    );
+  }
 }
 
-export default App;
+export default connect()(App);
