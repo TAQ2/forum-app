@@ -42,15 +42,15 @@ class Comments extends React.Component {
         {comments[postId].map((comment, i) => (
           <Comment {...comment} key={i} />
         ))}
-        <br />
         <AddComment postId={postId} />
       </>
     );
   }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state, props) => {
   const { items, error } = state.comments;
+  // @Cleanup - only pass comments that are related to the components
   return { comments: items, error };
 };
 

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
+import Card from "../components/Card";
 
 class Comment extends Component {
   static propTypes = {
@@ -8,21 +9,23 @@ class Comment extends Component {
     email: PropTypes.string.isRequired
   };
 
-  state = {
-    isShowingComments: false
-  };
-
   render() {
     const { name, body, email } = this.props;
 
     return (
-      <div style={{ marginTop: "1em", borderTop: "dotted gray 2px" }}>
-        <div style={{ display: "flex", justifyContent: "space-between" }}>
+      <Card>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            marginBottom: 10
+          }}
+        >
           <strong>{name}</strong>
           <a href={"mailto:" + email}>{email}</a>
         </div>
         <div>{body}</div>
-      </div>
+      </Card>
     );
   }
 }

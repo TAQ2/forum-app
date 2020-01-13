@@ -41,7 +41,7 @@ describe("retrievePosts", () => {
     };
     const error = undefined;
 
-    // TODO put this url in a different place
+    // @Incomplete put this url in a different place
     fetchMock.getOnce("https://jsonplaceholder.typicode.com/posts", {
       body: [post]
     });
@@ -65,7 +65,7 @@ describe("retrievePosts", () => {
     };
     const error = undefined;
 
-    // TODO put this url in a different place
+    // @Incomplete put this url in a different place
     fetchMock.getOnce("https://jsonplaceholder.typicode.com/posts", {
       body: [post]
     });

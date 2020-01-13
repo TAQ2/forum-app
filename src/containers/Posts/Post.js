@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 
 import Comments from "../Comments";
+import Button from "../components/Button";
 
 class Post extends Component {
   static propTypes = {
@@ -43,14 +44,15 @@ class Post extends Component {
           </div>
           <div>{body}</div>
         </div>
-        <button
-          onClick={() => {
-            this.setState({ isShowingComments: !isShowingComments });
-          }}
-          style={{ marginTop: 10 }}
-        >
-          {isShowingComments ? "Hide" : "Comments"}
-        </button>
+        <div style={{ display: "flex", marginTop: 20 }}>
+          <Button
+            onClick={() => {
+              this.setState({ isShowingComments: !isShowingComments });
+            }}
+          >
+            {isShowingComments ? "Comments \u2193 " : "Comments \u2192"}
+          </Button>
+        </div>
         {isShowingComments && (
           <div style={{ marginLeft: "5%", width: "90%" }}>
             <Comments postId={id} />

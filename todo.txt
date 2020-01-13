@@ -1,3 +1,9 @@
+use theme file
+doensn't make sense to have the comments organised by id, rather graphql it
 add tests
 Design
 Toaster explaining the point of the repo?Ì
+proptypes
+loading messages
+
+styled components not auto correcting properly
