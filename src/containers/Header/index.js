@@ -1,5 +1,4 @@
 import React from "react";
-// import { Spring } from "react-spring/renderprops";
 import { useSpring, animated } from "react-spring";
 import styled from "styled-components";
 import { connect } from "react-redux";
