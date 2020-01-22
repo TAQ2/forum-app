@@ -4,7 +4,5 @@ export const screenBreakpoints = {
 };
 
 export const colours = {
-  primary: "#acd0e6",
-  secondary: "#eee",
-  tertiary: ""
+  primary: "#acd0e6"
 };

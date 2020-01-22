@@ -6,6 +6,7 @@
 - redux
 - react-spring
 - github pages
+- proptypes
 
 # Concepts Explored
 

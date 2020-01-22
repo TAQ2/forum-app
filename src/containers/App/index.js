@@ -6,7 +6,6 @@ import Posts from "../Posts";
 import { updateScrollY, updateScreenWidth } from "../../actions/userMetrics";
 
 class App extends React.Component {
-  // @Cleanup - move user metrics logic into a new file
   updateScroll = () => {
     const winScrollY =
       document.body.scrollTop || document.documentElement.scrollTop;

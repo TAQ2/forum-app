@@ -65,7 +65,6 @@ class Comments extends React.Component {
 
 const mapStateToProps = (state, props) => {
   const { items, error } = state.comments;
-  // @Cleanup - only pass comments that are related to the components
   return { comments: items[props.postId], error };
 };
 

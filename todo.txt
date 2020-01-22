@@ -1,10 +1,10 @@
 restructure comments into a better way so that we don't use Proptypes.any and also loading flag things to make a graphql type structure
-use theme file
 proptypes
 loading messages
 readme description
 nav bar animation plays on load
 use github actions?
+check that everywhere that uses screen width from redux makes sense - should I just use media queries? (look at addComment)
 
 move resize recording into seperate file - as redux middleware?
 Toaster explaining the point of the repo? or a link to the readme?
