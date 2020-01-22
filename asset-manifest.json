@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/forum-app/static/css/main.9e662c90.chunk.css",
-    "main.js": "/forum-app/static/js/main.8dc7956a.chunk.js",
-    "main.js.map": "/forum-app/static/js/main.8dc7956a.chunk.js.map",
+    "main.js": "/forum-app/static/js/main.6f90a90e.chunk.js",
+    "main.js.map": "/forum-app/static/js/main.6f90a90e.chunk.js.map",
     "runtime~main.js": "/forum-app/static/js/runtime~main.22f28b54.js",
     "runtime~main.js.map": "/forum-app/static/js/runtime~main.22f28b54.js.map",
     "static/js/2.ebff9357.chunk.js": "/forum-app/static/js/2.ebff9357.chunk.js",
     "static/js/2.ebff9357.chunk.js.map": "/forum-app/static/js/2.ebff9357.chunk.js.map",
     "index.html": "/forum-app/index.html",
-    "precache-manifest.8a5e959745f7931bdedd55f123c69ee7.js": "/forum-app/precache-manifest.8a5e959745f7931bdedd55f123c69ee7.js",
+    "precache-manifest.02a1171f543fdbd2962f5ead61f9bf34.js": "/forum-app/precache-manifest.02a1171f543fdbd2962f5ead61f9bf34.js",
     "service-worker.js": "/forum-app/service-worker.js",
     "static/css/main.9e662c90.chunk.css.map": "/forum-app/static/css/main.9e662c90.chunk.css.map",
     "static/media/index.css": "/forum-app/static/media/Chomsky.296a4058.otf"
