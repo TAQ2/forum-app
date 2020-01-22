@@ -3,7 +3,7 @@ import { useSpring, animated } from "react-spring";
 import styled from "styled-components";
 import { connect } from "react-redux";
 
-import { screenBreakpoints } from "../../theme";
+import { screenBreakpoints, colours } from "../../theme";
 import { PropTypes } from "prop-types";
 
 const Container = styled(animated.header)`
@@ -31,8 +31,8 @@ function Header({ hasScrolled, screenWidth }) {
         ? "2.5em"
         : "3em",
     background: hasScrolled
-      ? "linear-gradient(white 90%, lightblue 10%)"
-      : "linear-gradient(lightblue 0%, lightblue 100%)"
+      ? `linear-gradient(white 90%, ${colours.primary} 10%)`
+      : `linear-gradient(${colours.primary} 0%, ${colours.primary} 100%)`
   });
 
   return (

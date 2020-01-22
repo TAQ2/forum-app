@@ -4,6 +4,7 @@ proptypes
 loading messages
 readme description
 nav bar animation plays on load
+use github actions?
 
 move resize recording into seperate file - as redux middleware?
 Toaster explaining the point of the repo? or a link to the readme?

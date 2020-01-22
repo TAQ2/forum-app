@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { colours } from "../../theme";
 
 const Button = styled.div`
   border-radius: 10px;
@@ -15,8 +16,8 @@ const Button = styled.div`
     } else {
       return `
         cursor: pointer;
-        background-color: #acd0e6;
-        border: 2px solid #acd0e6;
+        background-color: ${colours.primary};
+        border: 2px solid ${colours.primary};
       `;
     }
   }};
