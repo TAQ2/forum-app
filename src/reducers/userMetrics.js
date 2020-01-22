@@ -1,8 +1,8 @@
 import { UPDATE_SCROLL_Y, UPDATE_SCREEN_WIDTH } from "../actions/userMetrics";
 
 const initialState = {
-  scrollY: 0,
-  screenWidth: 0
+  scrollY: document.body.scrollTop || document.documentElement.scrollTop,
+  screenWidth: window.innerWidth
 };
 
 function userMetrics(state = initialState, action) {
