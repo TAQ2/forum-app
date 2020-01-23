@@ -3,8 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "gh-pages": "^2.2.0",
-    "husky": "^4.2.0",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
@@ -14,6 +12,10 @@
     "redux": "^4.0.1",
     "redux-thunk": "^2.3.0",
     "styled-components": "^4.4.1"
+  },
+  "devDependencies": {
+    "gh-pages": "^2.2.0",
+    "husky": "^4.2.0"
   },
   "homepage": "https://taq2.github.io/forum-app",
   "scripts": {
@@ -26,6 +28,11 @@
   },
   "eslintConfig": {
     "extends": "react-app"
+  },
+  "husky": {
+    "hooks": {
+      "post-commit": "npm run deploy"
+    }
   },
   "browserslist": {
     "production": [
