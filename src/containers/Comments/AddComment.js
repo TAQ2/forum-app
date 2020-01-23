@@ -86,13 +86,13 @@ class AddComment extends React.Component {
           style={{
             display: "flex",
             marginBottom: 10,
-            flexDirection: isSmallScreen && "column" // @Incomplete - use media queries
+            flexDirection: isSmallScreen && "column"
           }}
         >
           <Input
             style={{
               marginRight: 20,
-              marginBottom: isSmallScreen && 10 // @Incomplete - use media queries
+              marginBottom: isSmallScreen && 10
             }}
             value={title}
             onChange={this.handleInputChange}
