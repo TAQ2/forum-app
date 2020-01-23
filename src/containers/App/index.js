@@ -1,6 +1,5 @@
 import React from "react";
 import { connect } from "react-redux";
-import "react-toastify/dist/ReactToastify.css";
 
 import Header from "../Header";
 import Toaster from "../../components/Toaster";
