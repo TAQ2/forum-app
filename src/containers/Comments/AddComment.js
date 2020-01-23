@@ -3,8 +3,8 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import styled from "styled-components";
 
-import Card from "../components/Card";
-import Button from "../components/Button";
+import Card from "../../components/Card";
+import Button from "../../components/Button";
 import { addComment } from "../../actions/comments";
 import { screenBreakpoints } from "../../theme";
 

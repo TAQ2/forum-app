@@ -1,5 +1,6 @@
 import styled from "styled-components";
-import { colours } from "../../theme";
+
+import { colours } from "../theme";
 
 const Button = styled.div`
   border-radius: 10px;

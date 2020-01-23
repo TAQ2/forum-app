@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 
-import Card from "../components/Card";
+import Card from "../../components/Card";
 import { screenBreakpoints } from "../../theme";
 
 class Comment extends Component {

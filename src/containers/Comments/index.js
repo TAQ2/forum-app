@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 
+import Loader from "../../components/Loader";
 import Comment from "./Comment";
 import AddComment from "./AddComment";
 import { retrieveComments } from "../../actions/comments";
@@ -48,7 +49,7 @@ class Comments extends React.Component {
     }
 
     if (comments == null || comments.fetchingComments) {
-      return <div>Fetching comments</div>;
+      return <Loader />;
     }
     return (
       <>

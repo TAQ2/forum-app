@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import styled from "styled-components";
 
+import Loader from "../../components/Loader";
 import Post from "./Post";
 import { screenBreakpoints } from "../../theme";
 import { retrievePosts } from "../../actions/posts";
@@ -38,7 +39,7 @@ class Posts extends Component {
     }
 
     if (fetchingPosts) {
-      return <h3>Loading Posts!</h3>;
+      return <Loader />;
     }
 
     return (

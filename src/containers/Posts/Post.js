@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 
 import Comments from "../Comments";
-import Button from "../components/Button";
+import Button from "../../components/Button";
 
 class Post extends Component {
   static propTypes = {
