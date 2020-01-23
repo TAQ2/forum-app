@@ -24,14 +24,20 @@ const comments = (
       return {
         ...state,
         error: action.error,
-        items: { ...state.items, [action.postId]: action.items }
+        items: {
+          ...state.items,
+          [action.postId]: { nodes: action.items, fetchingComments: false }
+        }
       };
     case ADD_COMMENT:
       const newComment = { ...action.formData, postId: action.postId };
-      const newComments = [...state.items[action.postId], newComment];
+      const newComments = [...state.items[action.postId].nodes, newComment];
       return {
         ...state,
-        items: { ...state.items, [action.postId]: newComments }
+        items: {
+          ...state.items,
+          [action.postId]: { nodes: newComments, fetchingComments: false }
+        }
       };
     default:
       return state;

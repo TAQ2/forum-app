@@ -23,15 +23,8 @@ class Comments extends React.Component {
   static propTypes = {
     dispatch: PropTypes.func.isRequired,
     postId: PropTypes.number.isRequired,
-    // @Question - it doesn't matter if we set fetchingComments flag so do we
-    // need it? Does it just improve readability, perhaps the store should be
-    // restructued so that comments are in the post object
-    comments: PropTypes.any,
+    comments: PropTypes.object,
     error: PropTypes.bool
-  };
-
-  state = {
-    isLoading: true
   };
 
   componentDidMount() {
@@ -54,7 +47,7 @@ class Comments extends React.Component {
     return (
       <>
         <Container>
-          {comments.map((comment, i) => (
+          {comments.nodes.map((comment, i) => (
             <Comment {...comment} key={i} />
           ))}
         </Container>

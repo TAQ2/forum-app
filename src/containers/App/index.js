@@ -6,6 +6,7 @@ import Toaster from "../../components/Toaster";
 import Posts from "../Posts";
 import { updateScrollY, updateScreenWidth } from "../../actions/userMetrics";
 
+// @Cleanup - move the user metric listeners to a redux middleware
 class App extends React.Component {
   updateScroll = () => {
     const winScrollY =
