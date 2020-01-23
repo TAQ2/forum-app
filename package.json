@@ -27,11 +27,6 @@
   "eslintConfig": {
     "extends": "react-app"
   },
-  "husky": {
-    "hooks": {
-      "post-commit": "npm run deploy"
-    }
-  },
   "browserslist": {
     "production": [
       ">0.2%",

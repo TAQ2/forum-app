@@ -23,7 +23,7 @@ const Container = styled(animated.header)`
 `;
 
 function Header({ hasScrolled, screenWidth }) {
-  // @Cleanup - find a nicer way of generating the animation
+  // @Cleanup - find a nicer way of generating the animation config
   const animation = useSpring({
     from: {
       fontSize: screenWidth <= screenBreakpoints.small ? "2em" : "3em"
