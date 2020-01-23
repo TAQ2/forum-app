@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "1e72bb92d63e5bfc0caf57f00aac3940",
+    "revision": "5db872a3ca55cd0d8bda4009ea8a2e59",
     "url": "/forum-app/index.html"
   },
   {
-    "revision": "a1b3582decf7096b0412",
+    "revision": "48ae239161d0097c22cb",
     "url": "/forum-app/static/css/main.9e662c90.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/forum-app/static/js/2.7474b2d1.chunk.js"
   },
   {
-    "revision": "a1b3582decf7096b0412",
-    "url": "/forum-app/static/js/main.0ae7eea3.chunk.js"
+    "revision": "48ae239161d0097c22cb",
+    "url": "/forum-app/static/js/main.e2042bc1.chunk.js"
   },
   {
     "revision": "0c96824797fa11b703da",
