@@ -9,7 +9,9 @@
 
 # Concepts Explored
 
-- Responsive Design and animation that aids UX
+- Balance of state management in redux and in react components when appropriate
+- Responsive Design
+- UX driven animation
 - Interacting with external APIs
 - Updating the UI appropriately based on API requests
 - Deployment
