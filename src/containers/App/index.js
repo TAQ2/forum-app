@@ -38,14 +38,13 @@ class App extends React.Component {
         <Header />
         <Posts />
         <Toaster>
-          This app explores react lifecycles, redux, responsive design and more.
-          See more{" "}
+          This app explores react lifecycles, redux, responsive design and{" "}
           <a
             target="_blank"
             rel="noopener noreferrer"
             href="https://www.github.com/taq2/forum-app"
           >
-            here
+            more
           </a>
           .
         </Toaster>
