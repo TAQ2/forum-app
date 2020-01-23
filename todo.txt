@@ -1,7 +1,5 @@
 restructure comments into a better way so that we don't use Proptypes.any and also loading flag things to make a graphql type structure - and then check proptypes
 
 readme description
-use github actions?
 
 move resize recording into seperate file - as redux middleware?
-Toaster explaining the point of the repo? or a link to the readme?
