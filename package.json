@@ -1,5 +1,5 @@
 {
-  "name": "forum-app",
+  "name": "fake-latin-news",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -18,7 +18,7 @@
     "gh-pages": "^2.2.0",
     "husky": "^4.2.0"
   },
-  "homepage": "https://taq2.github.io/forum-app",
+  "homepage": "https://taq2.github.io/fake-latin-news",
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",

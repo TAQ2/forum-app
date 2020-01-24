@@ -42,7 +42,7 @@ class App extends React.Component {
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="https://www.github.com/taq2/forum-app"
+            href="https://www.github.com/taq2/fake-latin-news"
           >
             more
           </a>
