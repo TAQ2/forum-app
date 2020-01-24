@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/forum-app/static/css/main.9e662c90.chunk.css",
-    "main.js": "/forum-app/static/js/main.75d4b846.chunk.js",
-    "main.js.map": "/forum-app/static/js/main.75d4b846.chunk.js.map",
-    "runtime~main.js": "/forum-app/static/js/runtime~main.22f28b54.js",
-    "runtime~main.js.map": "/forum-app/static/js/runtime~main.22f28b54.js.map",
-    "static/js/2.7474b2d1.chunk.js": "/forum-app/static/js/2.7474b2d1.chunk.js",
-    "static/js/2.7474b2d1.chunk.js.map": "/forum-app/static/js/2.7474b2d1.chunk.js.map",
-    "index.html": "/forum-app/index.html",
-    "precache-manifest.32421a46e65e314f751742275c5811d2.js": "/forum-app/precache-manifest.32421a46e65e314f751742275c5811d2.js",
-    "service-worker.js": "/forum-app/service-worker.js",
-    "static/css/main.9e662c90.chunk.css.map": "/forum-app/static/css/main.9e662c90.chunk.css.map",
-    "static/media/index.css": "/forum-app/static/media/Chomsky.296a4058.otf"
+    "main.css": "/fake-latin-news/static/css/main.336a32ed.chunk.css",
+    "main.js": "/fake-latin-news/static/js/main.f4d514ca.chunk.js",
+    "main.js.map": "/fake-latin-news/static/js/main.f4d514ca.chunk.js.map",
+    "runtime~main.js": "/fake-latin-news/static/js/runtime~main.70ac8f5e.js",
+    "runtime~main.js.map": "/fake-latin-news/static/js/runtime~main.70ac8f5e.js.map",
+    "static/js/2.9e2a4e36.chunk.js": "/fake-latin-news/static/js/2.9e2a4e36.chunk.js",
+    "static/js/2.9e2a4e36.chunk.js.map": "/fake-latin-news/static/js/2.9e2a4e36.chunk.js.map",
+    "index.html": "/fake-latin-news/index.html",
+    "precache-manifest.28a06a19cedefb1dce0b7400a0115edd.js": "/fake-latin-news/precache-manifest.28a06a19cedefb1dce0b7400a0115edd.js",
+    "service-worker.js": "/fake-latin-news/service-worker.js",
+    "static/css/main.336a32ed.chunk.css.map": "/fake-latin-news/static/css/main.336a32ed.chunk.css.map",
+    "static/media/index.css": "/fake-latin-news/static/media/Chomsky.296a4058.otf"
   }
 }
